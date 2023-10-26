@@ -5,15 +5,15 @@ pipeline{
     agent any
 
     environment{
-        registry = ""
-        registryCredential = ""
+        registry = "monjoychoudhury29/calculator_demo"
+        registryCredential = "dockerhub"
         dockerImage = ""
-        BUILD_NUMBER = "1.0.0"
+        BUILD_NUMBER = "1.0"
     }
     stages{
         stage('Pull GitHub'){
             steps{
-                git branch: 'master',  url: ''
+                git branch: 'master',  url: 'https://github.com/MnCSSJ4x/DevOps-Calculator.git'
             }
         }
         stage('Build Maven Jar'){
@@ -31,7 +31,7 @@ pipeline{
         stage('Docker Image Push'){
             steps{
                 script{
-                    docker.withRegistry( '', registryCredential){
+                    docker.withRegistry('', registryCredential){
                         dockerImage.push()
                     }
                 }
