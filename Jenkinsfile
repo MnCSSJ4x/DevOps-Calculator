@@ -1,7 +1,7 @@
 pipeline{
     agent any
     tools{
-        maven "Maven 3.9.4"
+        maven "maven"
     }
     environment{
         registry = "monjoychoudhury29/calculator_demo"
