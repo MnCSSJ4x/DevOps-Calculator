@@ -1,6 +1,8 @@
 pipeline{
     agent any
-
+    tools{
+        maven "Maven 3.9.4"
+    }
     environment{
         registry = "monjoychoudhury29/calculator_demo"
         registryCredential = "dockerhub"
