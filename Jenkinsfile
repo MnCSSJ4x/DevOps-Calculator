@@ -3,7 +3,7 @@ pipeline{
 
     environment{
         registry = "monjoychoudhury29/calculator_demo"
-        registryCredential = "dockerhub"
+        registryCredential = 'dockerhub'
         dockerImage = ""
         BUILD_NUMBER = "1.0"
     }
