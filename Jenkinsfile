@@ -1,6 +1,6 @@
 pipeline{
     tools {
-        maven 'maven-3.6.3'
+        maven 'Maven'
     }
     agent any
 
@@ -47,7 +47,7 @@ pipeline{
         steps{
             ansiblePlaybook colorized: true,
             disableHostKeyChecking: true,
-            installation: 'ansible',
+            installation: 'Ansible',
             inventory: 'inventory',
             playbook: 'playbook.yml'
         }
