@@ -48,19 +48,6 @@ pipeline{
                 playbook: 'playbook.yml'
             }
         }
-        stage('Notifications'){
-            post {
-                success {
-                  script {
-                    emailaction@([$EMAIL_RECIPIENT], '$EMAIL_SENDER', '$EMAIL_SUBJECT', '$EMAIL_BODY')
-                  }
-                }
-                failure {
-                  script {
-                    emailaction@([$EMAIL_RECIPIENT], '$EMAIL_SENDER', '$EMAIL_SUBJECT', '$EMAIL_BODY')
-                  }
-                }
-            }
-    }
+        
 }
 }
