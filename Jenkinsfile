@@ -42,15 +42,14 @@ pipeline{
                 sh "docker rmi $registry:$BUILD_NUMBER"
             }
         }
-    }
-    stage('Ansible Deploy'){
+         stage('Ansible Deploy'){
         steps{
-            ansiblePlaybook colorized: true,
-            disableHostKeyChecking: true,
-            installation: 'Ansible',
-            inventory: 'inventory',
-            playbook: 'playbook.yml'
+                ansiblePlaybook colorized: true,
+                disableHostKeyChecking: true,
+                installation: 'Ansible',
+                inventory: 'inventory',
+                playbook: 'playbook.yml'
+            }
         }
     }
-
 }
